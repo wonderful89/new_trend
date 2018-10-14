@@ -1,3 +1,4 @@
+import 'package:new_trend/utils/log.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'models.dart';
 import 'dart:async';
@@ -126,10 +127,14 @@ abstract class BasicScreenStateModel extends BaseModel {
   Future initApp() {
     basicScreenStatus = CommonPageStatus.RUNNING;
     notifyListeners();
+    logStep.info('initApp: 111');
     return http.read(Constant.APP_INIT).then(json.decode).then((resp) {
+      print('resp = $resp');
       basicScreenNavItems = resp['BottomBarItem'];
       basicScreenStatus = CommonPageStatus.DONE;
+      logStep.info('initApp: 222');
       basicInited.complete(null);
+      logStep.info('initApp: 333');
     }).catchError((o) {
       print(o);
       basicScreenStatus = CommonPageStatus.ERROR;

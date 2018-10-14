@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:new_trend/screens/task_screen.dart';
+import 'package:new_trend/utils/log.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:new_trend/screens/screens.dart';
 import 'package:new_trend/models/models.dart';
 
-void main() => runApp(new TrendApp());
+void main() {
+  configLog();
+  return runApp(new TrendApp());
+}
 
 class TrendApp extends StatelessWidget {
   final model = MainStateModel();
@@ -46,7 +50,10 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
 
   void initTabController() async {
     final model = ScopedModel.of<MainStateModel>(context);
+    logStep.info('main: 111');
     await model.basicInited.future; //阻塞初始化状态，等待网络请求完成后初始化TabController
+
+    logStep.info('main: 222');
     model.basicScreenNavItems.forEach((e) {
       if ("${e['pageType']}".toLowerCase() == 'tabs') {
         final tab = TabController(
@@ -88,7 +95,7 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
   Widget _buildTabView(BasicScreenStateModel state) {
     return TabBarView(
         controller: _tabMaps[state.basicCurrentTitleString],
-        children: List.generate<Widget>(
+        children: List.generate(
             state.basicScreenNavItems[state.basicCurrentSelNav]['tabItems']
                 .length, (i) {
           final e = state.basicScreenNavItems[state.basicCurrentSelNav]

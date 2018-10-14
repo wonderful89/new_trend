@@ -12,18 +12,19 @@ version: 1.0.0+1
 dependencies:
   flutter:
     sdk: flutter
-  scoped_model: ^0.3.0
-  cupertino_icons: ^0.1.2
-  url_launcher: ^3.0.3
-  intl: ^0.15.7
-  json_annotation: ^1.1.0
-  shared_preferences: ^0.4.2
+  scoped_model:
+  cupertino_icons:
+  url_launcher:
+  intl:
+  json_annotation:
+  shared_preferences:
+  logging:
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: ^0.10.1+1
-  json_serializable: 1.2.1
+  build_runner:
+  json_serializable:
 
 
 
