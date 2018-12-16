@@ -21,3 +21,7 @@ A Simple Flutter project.
 ### Notes
 
 * 软件部分时间可能会没有数据，多看代码就ok
+
+[Flutter | 状态管理探索篇——Scoped Model（一）](https://www.jianshu.com/u/f0cd06a06592)
+
+[Vadaski 状态管理系列文章](https://www.jianshu.com/u/f0cd06a06592)

@@ -12,13 +12,14 @@ version: 1.0.0+1
 dependencies:
   flutter:
     sdk: flutter
-  scoped_model:
-  cupertino_icons:
-  url_launcher:
-  intl:
-  json_annotation:
-  shared_preferences:
-  logging:
+  scoped_model: ^0.3.0
+  cupertino_icons: ^0.1.2
+  url_launcher: ^3.0.3
+  intl: ^0.15.7
+  json_annotation: ^1.1.0
+  shared_preferences: ^0.4.2
+  flutter_spinkit: ^2.1.0
+  http:
 
 dev_dependencies:
   flutter_test:
@@ -38,7 +39,8 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-
+  assets:
+    - assets/
   # To add assets to your application, add an assets section, like this:
   # assets:
   #  - images/a_dot_burr.jpeg
